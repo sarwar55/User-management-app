@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Implementation-Title: springmvc-rest-angular2
+Implementation-Version: 0.0.1-SNAPSHOT
+Built-By: sarwar
+Implementation-Vendor-Id: org.sarwar.becreative
+Build-Jdk: 1.8.0_112
+Implementation-URL: http://projects.spring.io/spring-boot/springmvc-re
+ st-angular2/
+Created-By: Maven Integration for Eclipse
+Implementation-Vendor: Pivotal Software, Inc.
+

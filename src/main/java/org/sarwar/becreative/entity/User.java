@@ -25,7 +25,6 @@ public class User implements Serializable{
 	private static final long serialVersionUID = -8825010309076840323L;
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "USER_ID")
 	private UUID userId;
 	
@@ -67,7 +66,6 @@ public class User implements Serializable{
 	}
 	public User(String firstName, String middleName, String lastName, Integer age, String gender,
 			String phoneNumber, String zip) {
-		super();
 		this.firstName = firstName;
 		this.middleName = middleName;
 		this.lastName = lastName;
