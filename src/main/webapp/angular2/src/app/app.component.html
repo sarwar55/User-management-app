@@ -1,0 +1,131 @@
+
+<main>
+<div class="jumbotron">
+	<h1 style="text-align: center">A Sarwar Zahan Production</h1>
+	<p style="text-align: center">Welcome to My User Management
+		Application</p>
+</div>
+    <div class="form-group" class="container">
+			<div class="col-offset-2 col-10">
+				<button (click)="getAllUsers()" class="btn btn-primary btn-lg">Get All
+					User</button>
+			</div>
+		</div>
+<div class="container">
+	<div class="row clearfix"></div>
+	<h3 style="text-align: center">
+		<i>Add User Form</i>
+	</h3>
+
+
+	<form class="form-horizontal" [formGroup]="userSubmit"
+		(ngSubmit)="onSubmit(userSubmit)">
+
+		<div class="form-group row">
+			<label for="userId" class="col-sm-2 col-form-label"> User Id:
+			</label>
+			<div class="col-sm-4">
+				<input type="text" class="form-control" id="userId"
+					formControlName="userId"
+					placeholder="deba1289-3feb-4974-8042-2c7c96c10aea">
+			</div>
+		</div>
+		<div class="form-group row">
+			<label for="firstName" class="col-sm-2 col-form-label"> First
+				Name: </label>
+			<div class="col-sm-4">
+				<input id="firstName" formControlName="firstName" type="text"
+					class="form-control" placeholder="Sarwar">
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="middleName" class="col-sm-2 col-form-label">
+				Middle Name: </label>
+			<div class="col-sm-4">
+				<input id="middleName" formControlName="middleName" type="text"
+					class="form-control" placeholder="S">
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="lastName" class="col-sm-2 col-form-label"> Last
+				Name: </label>
+			<div class="col-sm-4">
+				<input id="lastName" formControlName="lastName" type="text"
+					class="form-control" placeholder="Zahan">
+			</div>
+		</div>
+
+		<div class="form-group">
+			<label for="age" class="col-sm-2 col-form-label"> Age: </label>
+			<div class="col-sm-4">
+				<input id="age" formControlName="age" type="text"
+					class="form-control" placeholder="25">
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="gender" class="col-sm-2 col-form-label"> Gender:
+			</label>
+			<div class="col-sm-4">
+				<input id="gender" formControlName="gender" type="text"
+					class="form-control" placeholder="M or F">
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="phoneNumber" class="col-sm-2 col-form-label">
+				Phone Number: </label>
+			<div class="col-sm-4">
+				<input id="phoneNumber" formControlName="phoneNumber" type="text"
+					class="form-control" placeholder="5112121210">
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="zip" class="col-sm-2 col-form-label"> Zip Code: </label>
+			<div class="col-sm-4">
+				<input id="zip" formControlName="zip" type="text"
+					class="form-control" placeholder="711222131">
+			</div>
+		</div>
+
+		<div class="form-group">
+			<div class="col-offset-2 col-10">
+				<button type="submit" class="btn btn-primary btn-lg">Add
+					User</button>
+			</div>
+		</div>
+	</form>
+</div>
+
+<div class="container">
+	<h1>Available Users</h1>
+
+	<div class="row" *ngIf="users">
+		<div class="col-12">
+			<div class="table-responsive">
+				<table class="table">
+					<tbody>
+						<tr *ngFor="let user of users">
+							<td>User Id #: <strong>{{user.userId}}</strong></td>
+							<td>First Name : {{user.firstName}}<br /> Middle Name :
+								{{user.middleName}}<br /> Last Name : {{user.lastName}}<br />
+								Age : {{user.age}}<br /> Gender : {{user.gender}}<br /> Phone
+								Number : {{user.phoneNumber}}<br /> Zip Code #: {{user.zip}}<br />
+							</td>
+							<td>
+								<button type="submit" class="btn btn-primary"
+									(click)="updateUser(user.userId)">Update User</button>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>
+</main>
+
+<footer class="footer-basic-centered">
+	<p class="footer-company-motto">We Are Here To Serve and Create
+		Better Future</p>
+
+	<p class="footer-company-name">&copy; Sarwar Zahan, Inc. 2017</p>
+</footer>
