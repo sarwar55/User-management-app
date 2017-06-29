@@ -31,7 +31,7 @@ public class UserResourceTest {
     }
 
     @Test
-    public void getAvailableRooms() throws Exception {
+    public void getAvailableUsers() throws Exception {
         given().when().get("/" + "users").then()
                 .statusCode(200);
     }
